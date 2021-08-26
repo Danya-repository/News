@@ -1,0 +1,247 @@
+@import "mixins"
+@import "fonts"
+@import "vendor"
+@import "vars"
+@import "settings"
+
+.header
+  border-bottom: 1px solid $mainBorderColor
+  &-stripe
+    background: $navy
+
+    &__inner
+      display: grid
+      justify-content: end
+
+  &-top
+    background-image: url("../img/header-underlayer.png")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    border-bottom: 1px solid $darkGreyBorderColor
+
+    &__inner
+      display: grid
+      padding: 20px 0
+      grid-template-columns: 14% 53% 33%
+
+  .navigation__menu
+    margin: 0
+.extra-list
+  display: grid
+  grid-template-columns: repeat(4, auto)
+  grid-column-gap: 20px
+  font-family: "Lato Light"
+
+  &__link, &__link:visited
+    color: #fff
+    font-size: 14px
+    line-height: 22px
+
+.search-form
+  position: relative
+
+  max-width: 460px
+  width: 100%
+  max-height: 40px
+  background: $green
+
+  padding: 4px
+  margin: 15px 35px
+
+  &__input
+    width: 330px
+    height: 100%
+    border: transparent
+    border-radius: 2px
+
+  &__button
+    position: absolute
+    right: 0
+    top: 0
+
+    padding: 0 16px 0 36px
+
+    background: $green
+    border: none
+    outline: none
+    height: 100%
+    color: #fff
+    font-size: 23px
+
+    &::before
+      content: ''
+      position: absolute
+      left: 7px
+      top: 10px
+
+      height: 22px
+      width: 22px
+
+      background-image: url("../img/icons/search-icon.png")
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+
+.user-bar
+  display: grid
+  grid-template-columns: 65% 35%
+
+  &__wish-button
+    background-image: url("../img/icons/wish.png")
+    background-repeat: no-repeat
+    background-position: center 35%
+    background-color: transparent
+    position: revert
+
+    padding: 5px 0
+
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    color: $mainFontColor
+
+    border: none
+    outline: none
+
+    .wish-button__name
+      position: relative
+
+    .wish-button__count
+      border-radius: 38%
+      padding: 2px 5px
+      font-size: 13px
+      color: #fff
+      background-color: $green
+
+      position: absolute
+      right: -12px
+      top: -15px
+
+  .basket
+    text-align: right
+    border-right: 1px solid $darkGreyBorderColor
+    padding-right: 10px
+
+    &__upper
+      position: relative
+      margin-bottom: 10px
+
+      &::before
+        content: ''
+        left: 0
+        top: 0
+        height: 32px
+        width: 30px
+        position: absolute
+        background-image: url("../img/icons/basket.png")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+
+    &__down
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+    &__text
+      font-size: 23px
+      line-height: 26px
+      margin-right: 5px
+
+    &__total-price
+      font-size: 27px
+      padding-left: 20px
+      position: relative
+
+      &::before
+        content: '$'
+        position: absolute
+        left: 0
+
+    &__checkout-button
+      width: 90px
+      height: 30px
+      background: #000
+      color: #fff
+      border-radius: 4px
+
+      margin-left: auto
+
+.menu
+  padding: 0
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+
+    &-item
+      text-align: center
+      transition: all .5s
+      padding: 10px
+      &:hover
+        background-color: $green
+        transition: all .5s
+        .menu__list-link
+          color: #fff
+          transition: all .5s
+
+
+.main
+
+  &__inner
+    display: grid
+    padding: 15px 0
+    grid-template-columns: 190px 500px 290px
+    grid-template-rows: 300px 270px 600px
+    grid-column-gap: 10px
+    grid-row-gap: 15px
+
+.slider
+  grid-column: 1 / 3
+  overflow: hidden
+  &__item
+    background-image: url("../img/slider/slide.png")
+    height: 300px
+    padding: 80px
+    display: flex
+    align-items: flex-end
+
+  &__text
+    color: #fff
+    flex-direction: column
+    max-width: 320px
+    margin-left: auto
+    text-align: center
+
+
+
+  &__title
+    font-size: 47px
+
+  &__subtitle
+    font-size: 25px
+
+  &__author
+    font-size: 21px
+
+.aside-menu
+  grid-row: 2 / 4
+
+.goods-list
+  grid-column: 2 / 4
+  grid-row: 2 / 4
+
+.banner
+  position: relative
+
+  &__link
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+
+  &__image
+    height: 100%
+    width: 100%
